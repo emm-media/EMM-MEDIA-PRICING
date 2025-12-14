@@ -1,200 +1,251 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EMM MEDIA AI AUTOMATION - Pricing</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            width: 100%;
-        }
-        
-        .header {
-            text-align: center;
-            color: white;
-            margin-bottom: 50px;
-        }
-        
-        .header h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .header p {
-            font-size: 1.3em;
-            opacity: 0.95;
-        }
-        
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-        
-        .pricing-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pricing-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-        }
-        
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-        }
-        
-        .service-name {
-            font-size: 1.8em;
-            color: #333;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-        
-        .price-section {
-            margin: 25px 0;
-        }
-        
-        .original-price {
-            font-size: 1.2em;
-            color: #999;
-            text-decoration: line-through;
-            margin-bottom: 5px;
-        }
-        
-        .discounted-price {
-            font-size: 2.5em;
-            color: #667eea;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .discount-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.9em;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-        
-        .special-offer {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .special-offer::before {
-            content: '🎉';
-            position: absolute;
-            font-size: 100px;
-            opacity: 0.1;
-            right: -20px;
-            top: -20px;
-        }
-        
-        .special-offer h2 {
-            font-size: 2.2em;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-        
-        .special-offer p {
-            font-size: 1.3em;
-            line-height: 1.6;
-        }
-        
-        .highlight {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 15px;
-            background: rgba(255,255,255,0.2);
-            padding: 15px;
-            border-radius: 10px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>EMM MEDIA AI AUTOMATION</h1>
-            <p>Professional AI Solutions Pricing</p>
-        </div>
-        
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <div class="service-name">🎤 Voice AI</div>
-                <div class="price-section">
-                    <div class="original-price">$2,000</div>
-                    <div class="discounted-price">$1,500</div>
-                    <div class="discount-badge">25% OFF</div>
+/**
+ * Home.tsx - Soueast Automation Pricing Page
+ * 
+ * Design Philosophy: Modern Minimalist with Sophisticated Depth
+ * - Dark theme with cyan/blue accents
+ * - Glass-morphism cards with subtle shadows
+ * - Poppins (bold, geometric) for headings + Inter (readable) for body
+ * - Smooth fade-in animations and hover effects
+ * - Asymmetric layout with generous whitespace
+ */
+
+import { Button } from "@/components/ui/button";
+import { CheckCircle2 } from "lucide-react";
+import { useEffect, useState } from "react";
+
+export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background text-foreground overflow-hidden" dir="rtl">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/images/hero-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundAttachment: "fixed",
+          }}
+        />
+        <div className="absolute inset-0 bg-black/60 z-1" />
+
+        {/* Content */}
+        <div className="relative z-10 container max-w-6xl mx-auto px-4 py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className={`${isVisible ? "fade-in-up" : "opacity-0"} space-y-8`}>
+              <div className="space-y-4">
+                <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  تحويل الرسائل إلى فرص بيع جاهزة
+                </h1>
+                <p className="text-xl text-gray-300 leading-relaxed">
+                  نظام ذكاء اصطناعي يدير المحادثات، يؤهّل العملاء، ويسلّم فريق المبيعات Leads جاهزين بدون أي جهد يدوي.
+                </p>
+              </div>
+
+
+            </div>
+
+            {/* Right Visual Element */}
+            <div className={`${isVisible ? "fade-in-up" : "opacity-0"} hidden lg:block`} style={{ animationDelay: "0.2s" }}>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur-3xl" />
+                <div className="relative bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-8 backdrop-blur-sm">
+                  <div className="space-y-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-3 h-3 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-white">إدارة ذكية للرسائل</p>
+                        <p className="text-sm text-gray-400">ردود فورية وتفاعلية</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-3 h-3 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-white">تأهيل تلقائي</p>
+                        <p className="text-sm text-gray-400">تصنيف العملاء بالذكاء الاصطناعي</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-4">
+                      <div className="w-3 h-3 rounded-full bg-cyan-400 mt-2 flex-shrink-0" />
+                      <div>
+                        <p className="font-semibold text-white">Leads جاهزة</p>
+                        <p className="text-sm text-gray-400">تسليم مباشر لفريق المبيعات</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-            
-            <div class="pricing-card">
-                <div class="service-name">💬 Chat AI</div>
-                <div class="price-section">
-                    <div class="original-price">$1,400</div>
-                    <div class="discounted-price">$1,050</div>
-                    <div class="discount-badge">25% OFF</div>
-                </div>
-            </div>
-            
-            <div class="pricing-card">
-                <div class="service-name">⚙️ Process Automation</div>
-                <div class="price-section">
-                    <div class="original-price">$950</div>
-                    <div class="discounted-price">$700</div>
-                    <div class="discount-badge">25% OFF</div>
-                </div>
-            </div>
+          </div>
         </div>
-        
-        <div class="special-offer">
-            <h2>🎊 New Year Special Bundle 🎊</h2>
-            <p>Combine any 2 services and get an additional discount!</p>
-            <div class="highlight">
-                Total Bundle Discount: 40% OFF
+      </section>
+
+      {/* Pricing Section */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        <div className="container max-w-4xl mx-auto px-4">
+          {/* Section Header */}
+          <div className="text-center mb-16 fade-in-up">
+            <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
+              عرض Soueast الخاص
+            </h2>
+            <p className="text-xl text-gray-400">
+              حل شامل مصمّم خصيصاً لوكالات السيارات
+            </p>
+          </div>
+
+          {/* Pricing Card */}
+          <div className={`${isVisible ? "fade-in-up" : "opacity-0"} relative`} style={{ animationDelay: "0.3s" }}>
+            {/* Glow Effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 rounded-2xl blur-2xl" />
+
+            {/* Card */}
+            <div className="relative glass-card p-8 lg:p-12 border-2 border-cyan-500/30 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20">
+              {/* New Year Badge */}
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                <div className="bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-2 rounded-full text-sm font-bold text-black whitespace-nowrap">
+                  عرض رأس السنة الحصري – خصم 25%
+                </div>
+              </div>
+
+              {/* Card Content */}
+              <div className="pt-8 space-y-8">
+                {/* Package Name */}
+                <div className="text-center space-y-2">
+                  <h3 className="text-3xl font-bold text-white flex items-center justify-center gap-3">
+                    <span className="text-3xl">🟦</span>
+                    Soueast Automation Package
+                  </h3>
+                </div>
+
+                {/* Pricing */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-y border-gray-700">
+                  <div className="text-center">
+                    <p className="text-gray-400 text-sm mb-2">التثبيت (مرة واحدة)</p>
+                    <p className="text-4xl font-bold text-cyan-400">
+                      $1,680
+                    </p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-gray-400 text-sm mb-2">الاشتراك الشهري</p>
+                    <div>
+                      <p className="text-4xl font-bold text-cyan-400">
+                        $300<span className="text-lg text-gray-400">/شهر</span>
+                      </p>
+                      <p className="text-sm text-gray-500 mt-2">حتى 600 محادثة شهريًا</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Features List */}
+                <div className="space-y-4">
+                  <p className="text-sm font-semibold text-gray-300 uppercase tracking-wide">المميزات المتضمنة:</p>
+                  <div className="space-y-3">
+                    {[
+                      "ردود ذكية على الرسائل الواردة",
+                      "تأهيل تلقائي للعملاء أثناء المحادثة",
+                      "تصنيف مستوى الاهتمام بالذكاء الاصطناعي (High / Medium / Low)",
+                      "جمع بيانات العملاء تلقائيًا بدون إدخال يدوي",
+                      "لوحة متابعة واضحة وسهلة لفريق المبيعات",
+                      "تسليم العملاء المؤهّلين فقط لفريق المبيعات",
+                      "جاهزية للربط مع أنظمة CRM مثل Salesforce",
+                      "دعم وتحديثات مستمرة",
+                    ].map((feature, idx) => (
+                      <div key={idx} className="stagger-item flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <div className="pt-6">
+                  <a href="https://buy.stripe.com/aFa4gBajLgjc8SI9428so03" target="_blank" rel="noopener noreferrer" className="inline-block w-full btn-gradient py-4 rounded-lg text-lg font-semibold transition-all duration-300 text-center">
+                    تأكيد الخطة
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </section>
+
+      {/* Value Section */}
+      <section className="py-24 bg-gradient-to-b from-background to-black relative">
+        <div className="container max-w-4xl mx-auto px-4">
+          <h2 className="text-4xl lg:text-5xl font-bold text-center mb-16 text-white fade-in-up">
+            القيمة لفريق Soueast
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                title: "توفير الوقت",
+                description: "توفير ساعات يومية من وقت فريق المبيعات من خلال أتمتة الردود والتأهيل",
+              },
+              {
+                title: "إزالة العمل اليدوي",
+                description: "القضاء على الردود المتكررة والإدخال اليدوي للبيانات",
+              },
+              {
+                title: "وضوح كامل",
+                description: "رؤية شاملة وواضحة لأولويات المتابعة والعملاء المؤهلين",
+              },
+              {
+                title: "زيادة الإنتاجية",
+                description: "زيادة فرص إغلاق الصفقات بدون زيادة عدد الموظفين",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="stagger-item glass-card p-8 border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
+              >
+                <h3 className="text-xl font-bold text-cyan-400 mb-3">{item.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="py-24 bg-background relative overflow-hidden">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-transparent to-blue-500/5" />
+
+        <div className="relative container max-w-3xl mx-auto px-4 text-center fade-in-up">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-8 text-white leading-tight">
+            النظام لا يرد على الرسائل فقط،<br />
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              بل يحوّل الاهتمام إلى قرار شراء
+            </span>
+          </h2>
+
+          <p className="text-xl text-gray-400 mb-10 leading-relaxed">
+            دع الذكاء الاصطناعي يعمل لفريقك بينما تركز على إغلاق الصفقات الكبرى
+          </p>
+
+          <a href="https://buy.stripe.com/aFa4gBajLgjc8SI9428so03" target="_blank" rel="noopener noreferrer" className="inline-block btn-gradient px-10 py-4 rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-300">
+            الخطوة التالية
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 bg-black/50 border-t border-gray-800">
+        <div className="container max-w-6xl mx-auto px-4 text-center text-gray-500 text-sm">
+          <p>© 2025 Emm-media Automation جميع الحقوق محفوظة.</p>
+        </div>
+      </footer>
     </div>
-</body>
-</html>
+  );
+}
+
