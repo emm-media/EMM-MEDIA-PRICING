@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMM MEDIA AI AUTOMATION - Pricing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        }
+        
+        .service-name {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .price-section {
+            margin: 25px 0;
+        }
+        
+        .original-price {
+            font-size: 1.2em;
+            color: #999;
+            text-decoration: line-through;
+            margin-bottom: 5px;
+        }
+        
+        .discounted-price {
+            font-size: 2.5em;
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .discount-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .special-offer {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .special-offer::before {
+            content: '🎉';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            right: -20px;
+            top: -20px;
+        }
+        
+        .special-offer h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .special-offer p {
+            font-size: 1.3em;
+            line-height: 1.6;
+        }
+        
+        .highlight {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 15px;
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>EMM MEDIA AI AUTOMATION</h1>
+            <p>Professional AI Solutions Pricing</p>
+        </div>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="service-name">🎤 Voice AI</div>
+                <div class="price-section">
+                    <div class="original-price">$2,000</div>
+                    <div class="discounted-price">$1,500</div>
+                    <div class="discount-badge">25% OFF</div>
+                </div>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="service-name">💬 Chat AI</div>
+                <div class="price-section">
+                    <div class="original-price">$1,400</div>
+                    <div class="discounted-price">$1,050</div>
+                    <div class="discount-badge">25% OFF</div>
+                </div>
+            </div>
+            
+            <div class="pricing-card">
+                <div class="service-name">⚙️ Process Automation</div>
+                <div class="price-section">
+                    <div class="original-price">$950</div>
+                    <div class="discounted-price">$700</div>
+                    <div class="discount-badge">25% OFF</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="special-offer">
+            <h2>🎊 New Year Special Bundle 🎊</h2>
+            <p>Combine any 2 services and get an additional discount!</p>
+            <div class="highlight">
+                Total Bundle Discount: 40% OFF
+            </div>
+        </div>
+    </div>
+</body>
+</html>
